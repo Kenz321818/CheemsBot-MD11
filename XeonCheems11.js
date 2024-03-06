@@ -5783,6 +5783,7 @@ let animetxt = `
                 break
 case 'hentaivid': case 'hentai': case 'hentaivideo': {
 	if (!m.isGroup) return XeonStickGroup()
+	if (!isPremium) return replyprem(mess.premium)
 if (!AntiNsfw) return replygcxeon(mess.nsfw)
                 await XeonStickWait()
                 const { hentai } = require('./lib/scraper.js')
@@ -5791,7 +5792,8 @@ if (!AntiNsfw) return replygcxeon(mess.nsfw)
                 XeonBotInc.sendMessage(m.chat, { video: { url: result912.video_1 }, caption: `${themeemoji} Title : ${result912.title}\n${themeemoji} Category : ${result912.category}\n${themeemoji} Mimetype : ${result912.type}\n${themeemoji} Views : ${result912.views_count}\n${themeemoji} Shares : ${result912.share_count}\n${themeemoji} Source : ${result912.link}\n${themeemoji} Media Url : ${result912.video_1}` }, { quoted: m })
             }
             break
-case 'trap' :
+case 'trap':
+if (!isPremium) return replyprem(mess.premium)
 if (!m.isGroup) return XeonStickGroup()
 if (!AntiNsfw) return replygcxeon(mess.nsfw)
 await XeonStickWait()
@@ -5800,6 +5802,7 @@ XeonBotInc.sendMessage(m.chat, { caption: mess.success, image: { url:waifudd.dat
 break
 case 'hentai-neko' :
 case 'hneko' :
+if (!isPremium) return replyprem(mess.premium)
 if (!m.isGroup) return XeonStickGroup()
 if (!AntiNsfw) return replygcxeon(mess.nsfw)
     waifudd = await axios.get(`https://waifu.pics/api/nsfw/neko`)
@@ -5808,12 +5811,14 @@ break
 case 'hentai-waifu' :
 case 'nwaifu' :
 if (!m.isGroup) return XeonStickGroup()
+if (!isPremium) return replyprem(mess.premium)
 if (!AntiNsfw) return replygcxeon(mess.nsfw)
 await XeonStickWait()
     waifudd = await axios.get(`https://waifu.pics/api/nsfw/waifu`)         
 XeonBotInc.sendMessage(m.chat, { caption: mess.success, image: { url:waifudd.data.url } }, { quoted: m })
 break
 case 'gasm':
+if (!isPremium) return replyprem(mess.premium)
 if (!m.isGroup) return XeonStickGroup()
 	if (!AntiNsfw) return replygcxeon(mess.nsfw)
 await XeonStickWait()						
@@ -5821,6 +5826,7 @@ await XeonStickWait()
 XeonBotInc.sendMessage(m.chat, { caption: mess.success, image: { url:waifudd.data.url } }, { quoted: m })
 break  
 case 'milf':
+if (!isPremium) return replyprem(mess.premium)
 if (!m.isGroup) return XeonStickGroup()
 await XeonStickWait()
 var ahegaonsfw = JSON.parse(fs.readFileSync('./src/media/nsfw/milf.json'))
@@ -5828,6 +5834,7 @@ var xeonyresult = pickRandom(ahegaonsfw)
 XeonBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url } }, { quoted: m })
 break 
 case 'animespank':
+if (!isPremium) return replyprem(mess.premium)
 if (!m.isGroup) return XeonStickGroup()
 if (!AntiNsfw) return replygcxeon(mess.nsfw)
 await XeonStickWait()
@@ -5837,6 +5844,7 @@ await XeonStickWait()
                 })
 break
 case 'blowjob':
+if (!isPremium) return replyprem(mess.premium)
 if (!m.isGroup) return XeonStickGroup()
 	if (!AntiNsfw) return replygcxeon(mess.nsfw)
 await XeonStickWait()
@@ -5845,6 +5853,7 @@ var xeonyresult = pickRandom(ahegaonsfw)
 XeonBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url } }, { quoted: m })
 break
 case 'cuckold':
+if (!isPremium) return replyprem(mess.premium)
 if (!m.isGroup) return XeonStickGroup()
 	if (!AntiNsfw) return replygcxeon(mess.nsfw)
 await XeonStickWait()
@@ -5853,6 +5862,7 @@ var xeonyresult = pickRandom(ahegaonsfw)
 XeonBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url } }, { quoted: m })
 break
 case 'eba':
+if (!isPremium) return replyprem(mess.premium)
 if (!m.isGroup) return XeonStickGroup()
 	if (!AntiNsfw) return replygcxeon(mess.nsfw)
 await XeonStickWait()
@@ -5861,6 +5871,7 @@ var xeonyresult = pickRandom(ahegaonsfw)
 XeonBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url } }, { quoted: m })
 break
 case 'gangbang':
+if (!isPremium) return replyprem(mess.premium)
 if (!m.isGroup) return XeonStickGroup()
 	if (!AntiNsfw) return replygcxeon(mess.nsfw)
 await XeonStickWait()
@@ -5869,6 +5880,7 @@ var xeonyresult = pickRandom(ahegaonsfw)
 XeonBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url } }, { quoted: m })
 break
 case 'nsfwloli':
+if (!isPremium) return replyprem(mess.premium)
 if (!m.isGroup) return XeonStickGroup()
 	if (!AntiNsfw) return replygcxeon(mess.nsfw)
 await XeonStickWait()
@@ -5877,6 +5889,7 @@ var xeonyresult = pickRandom(ahegaonsfw)
 XeonBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url } }, { quoted: m })
 break
 case 'pussy':
+if (!isPremium) return replyprem(mess.premium)
 if (!m.isGroup) return XeonStickGroup()
 	if (!AntiNsfw) return replygcxeon(mess.nsfw)
 await XeonStickWait()
@@ -5885,6 +5898,7 @@ var xeonyresult = pickRandom(ahegaonsfw)
 XeonBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url } }, { quoted: m })
 break
 case 'yuri':
+if (!isPremium) return replyprem(mess.premium)
 if (!m.isGroup) return XeonStickGroup()
 	if (!AntiNsfw) return replygcxeon(mess.nsfw)
 await XeonStickWait()
@@ -5893,6 +5907,7 @@ var xeonyresult = pickRandom(ahegaonsfw)
 XeonBotInc.sendMessage(m.chat, { caption: mess.success, image: { url: xeonyresult.url } }, { quoted: m })
 break
 case 'zettai':
+if (!isPremium) return replyprem(mess.premium)
 if (!m.isGroup) return XeonStickGroup()
 	if (!AntiNsfw) return replygcxeon(mess.nsfw)
 await XeonStickWait()
